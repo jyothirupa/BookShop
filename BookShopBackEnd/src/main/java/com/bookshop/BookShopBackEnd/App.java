@@ -1,6 +1,6 @@
 package com.bookshop.BookShopBackEnd;
 
-import java.util.List;
+/*import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,7 +12,6 @@ public class App
     public static void main( String[] args )
     {
     	
-        
     	System.out.println("Before");
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
        
@@ -37,4 +36,4 @@ public class App
        
         System.out.println("After");
     }
-}
+}*/

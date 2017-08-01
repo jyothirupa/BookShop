@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity
+/*@Entity
 public class Book {
 
 	@Id
@@ -21,6 +21,9 @@ public class Book {
 	
 	@ManyToOne
 	private Supplier supplier;
+	
+	@ManyToOne
+	private CartItem cartItem;
 
 
 	public int getId() {
@@ -79,10 +82,21 @@ public class Book {
 		this.supplier = supplier;
 	}
 
+	public CartItem getCartItem() {
+		return cartItem;
+	}
+
+	public void setCartItem(CartItem cartItem) {
+		this.cartItem = cartItem;
+	}
+
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", name=" + name + ", summary=" + summary + ", price=" + price + ", author=" + author
-				+ ", category=" + category + ", supplier=" + supplier + "]";
+				+ ", category=" + category + ", supplier=" + supplier + ", cartItem=" + cartItem + "]";
 	}
 
+	
+
 }
+*/

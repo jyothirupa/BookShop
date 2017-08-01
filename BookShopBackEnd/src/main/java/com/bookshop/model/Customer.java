@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Entity
+/*@Entity
 public class Customer {
 	
 	@Id
@@ -89,3 +89,4 @@ public class Customer {
 	}	
 
 }
+*/

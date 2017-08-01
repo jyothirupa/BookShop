@@ -1,5 +1,5 @@
 package com.bookshop.dao;
-
+/*
 import java.util.List;
 
 import com.bookshop.model.Category;
@@ -17,3 +17,4 @@ public interface CategoryDAO {
 	List<Category> getAllCategories();
 
 }
+*/

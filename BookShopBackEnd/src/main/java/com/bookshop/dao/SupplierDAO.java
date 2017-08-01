@@ -1,5 +1,5 @@
 package com.bookshop.dao;
-
+/*
 import java.util.List;
 
 import com.bookshop.model.Supplier;
@@ -16,3 +16,4 @@ public interface SupplierDAO {
 
 	List<Supplier> getAllSuppliers();
 }
+*/

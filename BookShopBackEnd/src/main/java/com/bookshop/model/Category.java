@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
+/*@Entity
 public class Category {
 
 	@Id
@@ -48,3 +48,4 @@ public class Category {
 	}
 
 }
+*/

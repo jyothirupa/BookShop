@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-@Entity
+/*@Entity
 public class Cart {
 
 	@Id
@@ -52,3 +52,4 @@ public class Cart {
 	}	
 	
 }
+*/

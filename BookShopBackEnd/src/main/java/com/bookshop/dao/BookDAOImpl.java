@@ -8,8 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.bookshop.model.Book;
-
+/*
 @Repository
 public class BookDAOImpl implements BookDAO {
 
@@ -50,4 +49,4 @@ public class BookDAOImpl implements BookDAO {
 		return books;
 	}
 
-}
+}*/

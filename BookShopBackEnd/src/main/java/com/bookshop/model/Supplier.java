@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
+/*@Entity
 public class Supplier {
 	
 	@Id
@@ -50,3 +50,4 @@ public class Supplier {
 	
 
 }
+*/

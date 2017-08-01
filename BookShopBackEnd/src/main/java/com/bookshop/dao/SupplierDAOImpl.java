@@ -1,5 +1,5 @@
 package com.bookshop.dao;
-
+/*
 import java.util.List;
 
 import org.hibernate.Query;
@@ -51,3 +51,4 @@ public class SupplierDAOImpl implements SupplierDAO{
 	}
 
 }
+*/
