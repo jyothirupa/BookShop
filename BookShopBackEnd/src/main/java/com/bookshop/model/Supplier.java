@@ -1,53 +1,50 @@
 package com.bookshop.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
-/*@Entity
+import org.springframework.stereotype.Component;
+
+@Entity
+@Component
 public class Supplier {
-	
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String name;
-	private String location;
-	
-	@OneToMany
-	private List<Book> bookList;
-	
+
+	private String address;
+
+	public Supplier() {
+
+	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Book> getBookList() {
-		return bookList;
+
+	public String getAddress() {
+		return address;
 	}
-	public void setBookList(List<Book> bookList) {
-		this.bookList = bookList;
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	@Override
-	public String toString() {
-		return "Supplier [id=" + id + ", name=" + name + ", location=" + location + ", bookList=" + bookList + "]";
-	}
-	
-	
 
 }
-*/

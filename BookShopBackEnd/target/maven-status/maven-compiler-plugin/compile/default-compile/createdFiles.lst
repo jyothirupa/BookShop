@@ -1,6 +1,15 @@
+com\bookshop\dao\CategoryDAO.class
+com\bookshop\model\Category.class
+com\bookshop\model\User.class
+com\bookshop\dao\SupplierDAOImpl.class
 com\bookshop\dao\UserDAO.class
+com\bookshop\model\Book.class
+com\bookshop\dao\BookDAOImpl.class
 com\bookshop\config\HibernateConfiguration.class
 com\bookshop\dao\UserDAOImpl.class
+com\bookshop\dao\BookDAO.class
 com\bookshop\model\ShippingAddress.class
+com\bookshop\dao\CategoryDAOImpl.class
 com\bookshop\model\BillingAddress.class
-com\bookshop\model\User.class
+com\bookshop\dao\SupplierDAO.class
+com\bookshop\model\Supplier.class

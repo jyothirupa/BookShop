@@ -1,30 +1,31 @@
 package com.bookshop.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-/*@Entity
-public class Book {
+import org.springframework.stereotype.Component;
 
+@Entity
+@Component
+public class Book {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	private String name;
-	private String summary;
+
+	private String description;
+
 	private double price;
+
 	private String author;
 
-	@ManyToOne
-	private Category category;
-	
-	
-	@ManyToOne
-	private Supplier supplier;
-	
-	@ManyToOne
-	private CartItem cartItem;
+	public Book() {
 
+	}
 
 	public int getId() {
 		return id;
@@ -42,12 +43,12 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getSummary() {
-		return summary;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public double getPrice() {
@@ -66,37 +67,4 @@ public class Book {
 		this.author = author;
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
-	public Supplier getSupplier() {
-		return supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
-	public CartItem getCartItem() {
-		return cartItem;
-	}
-
-	public void setCartItem(CartItem cartItem) {
-		this.cartItem = cartItem;
-	}
-
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", summary=" + summary + ", price=" + price + ", author=" + author
-				+ ", category=" + category + ", supplier=" + supplier + ", cartItem=" + cartItem + "]";
-	}
-
-	
-
 }
-*/

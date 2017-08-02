@@ -1,23 +1,32 @@
 package com.bookshop.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-/*@Entity
-public class Category {
+import org.springframework.stereotype.Component;
+
+@Entity
+@Component
+public class Category implements Serializable{
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	private String name;
+	
+	private String description;
 
-	@OneToMany
-	private List<Book> bookList;
+	public Category() {
 
-	// getters+setters
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -34,18 +43,16 @@ public class Category {
 		this.name = name;
 	}
 
-	public List<Book> getBook_list() {
-		return bookList;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setBook_list(List<Book> book_list) {
-		this.bookList = book_list;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", book_list=" + bookList + "]";
-	}
+	
+	
+	
+	
 
 }
-*/

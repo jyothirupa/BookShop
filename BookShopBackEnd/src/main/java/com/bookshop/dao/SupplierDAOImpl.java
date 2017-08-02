@@ -1,5 +1,5 @@
 package com.bookshop.dao;
-/*
+
 import java.util.List;
 
 import org.hibernate.Query;
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import com.bookshop.model.Supplier;
 
 @Repository
-public class SupplierDAOImpl implements SupplierDAO{
-	
+public class SupplierDAOImpl implements SupplierDAO {
+
 	@Autowired
 	SessionFactory sessionFactory;
 
@@ -31,7 +31,7 @@ public class SupplierDAOImpl implements SupplierDAO{
 
 	public void deleteSupplier(int id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Supplier getSupplierById(int id) {
@@ -45,10 +45,9 @@ public class SupplierDAOImpl implements SupplierDAO{
 		// select * from Supplier;
 
 		Query query = session.createQuery("from Supplier");
-		List<Supplier> suppliers=query.list();
+		List<Supplier> suppliers = query.list();
 
 		return suppliers;
 	}
 
 }
-*/

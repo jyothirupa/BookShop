@@ -1,20 +1,19 @@
 package com.bookshop.dao;
-/*
+
 import java.util.List;
 
 import com.bookshop.model.Category;
 
 public interface CategoryDAO {
-	
-	public Category insertCategory(Category category);
 
-	public Category updateCategory(Category category);
+	public  boolean insertCategory(Category category);
 
-	void deleteCategory(int id);
+	public void  updateCategory(Category category);
+
+	public void deleteCategory(Category category);
 
 	Category getCategoryById(int id);
 
 	List<Category> getAllCategories();
 
 }
-*/

@@ -35,7 +35,11 @@ public class HibernateConfiguration {
 		builder.addProperties(hibernateProperties());
 
 		// to scan all entity classes in the package specified
-		builder.scanPackages("com.bookshop.model");
+		// builder.scanPackages("com.bookshop.model");
+		builder.addAnnotatedClass(User.class);
+		builder.addAnnotatedClass(Category.class);
+		builder.addAnnotatedClass(Supplier.class);
+		builder.addAnnotatedClass(Book.class);
 		return builder.buildSessionFactory();
 	}
 

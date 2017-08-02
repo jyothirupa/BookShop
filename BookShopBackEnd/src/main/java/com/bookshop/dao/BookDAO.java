@@ -1,13 +1,12 @@
 package com.bookshop.dao;
 
-/*import java.util.List;
+import java.util.List;
 
 import com.bookshop.model.Book;
 
-
 public interface BookDAO {
-	
-	public Book insertBook(Book book);
+
+	public boolean  insertBook(Book book);
 
 	public Book updateBook(Book book);
 
@@ -18,4 +17,3 @@ public interface BookDAO {
 	List<Book> getAllBooks();
 
 }
-*/
