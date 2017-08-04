@@ -8,12 +8,12 @@ public interface BookDAO {
 
 	public boolean  insertBook(Book book);
 
-	public Book updateBook(Book book);
+	public void updateBook(Book book);
 
-	void deleteBook(int id);
+	public void deleteBook(Book book);
 
-	Book getBookById(int id);
+	public Book getBookById(int id);
 
-	List<Book> getAllBooks();
+	public List<Book> getAllBooks();
 
 }

@@ -2,41 +2,75 @@ package com.bookshop.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bookshop.model.Supplier;
 
 @Repository
+@Transactional
 public class SupplierDAOImpl implements SupplierDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
 
-	public Supplier insertSupplier(Supplier supplier) {
+	public boolean insertSupplier(Supplier supplier) {
+		try {
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction();
+			session.save(supplier);
+			tx.commit();
+			session.flush();
+			session.close();
+			return true;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	public void updateSupplier(Supplier supplier) {
+		try {
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction();
+			session.update(supplier);
+			tx.commit();
+			session.flush();
+			session.close();
+
+		}
+
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
+	public void deleteSupplier(Supplier supplier) {
 		Session session = sessionFactory.openSession();
-		session.save(supplier);
+		Transaction tx = session.beginTransaction();
+		session.delete(supplier);
+		tx.commit();
 		session.flush();
 		session.close();
-		return supplier;
-	}
-
-	public Supplier updateSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void deleteSupplier(int id) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public Supplier getSupplierById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		Supplier supplier = (Supplier) session.get(Supplier.class, id);
+		tx.commit();
+		session.flush();
+		session.close();
+		return supplier;
 	}
 
 	public List<Supplier> getAllSuppliers() {
@@ -45,9 +79,9 @@ public class SupplierDAOImpl implements SupplierDAO {
 		// select * from Supplier;
 
 		Query query = session.createQuery("from Supplier");
-		List<Supplier> suppliers = query.list();
+		List<Supplier> categories = query.list();
 
-		return suppliers;
+		return categories;
 	}
 
 }

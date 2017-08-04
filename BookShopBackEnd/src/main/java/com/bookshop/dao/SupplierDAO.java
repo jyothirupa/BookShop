@@ -6,13 +6,13 @@ import com.bookshop.model.Supplier;
 
 public interface SupplierDAO {
 
-	public Supplier insertSupplier(Supplier supplier);
+	public boolean insertSupplier(Supplier supplier);
 
-	public Supplier updateSupplier(Supplier supplier);
+	public void updateSupplier(Supplier supplier);
 
-	void deleteSupplier(int id);
+	public void deleteSupplier(Supplier supplier);
 
-	Supplier getSupplierById(int id);
+	public Supplier getSupplierById(int id);
 
-	List<Supplier> getAllSuppliers();
+	public List<Supplier> getAllSuppliers();
 }

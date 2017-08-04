@@ -2,6 +2,8 @@ package com.bookshop.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.bookshop.model.Book;
 
 @Repository
+@Transactional
 public class BookDAOImpl implements BookDAO {
 
 	@Autowired
@@ -26,24 +29,48 @@ public class BookDAOImpl implements BookDAO {
 			session.flush();
 			session.close();
 			return true;
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
 
-	public Book updateBook(Book book) {
+	public void updateBook(Book book) {
+		try {
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction();
+			session.update(book);
+			tx.commit();
+			session.flush();
+			session.close();
 
-		return null;
+		}
+
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
 	}
 
-	public void deleteBook(int id) {
+	public void deleteBook(Book book) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.delete(book);
+		tx.commit();
+		session.flush();
+		session.close();
 
 	}
 
 	public Book getBookById(int id) {
-
-		return null;
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		Book book = (Book) session.get(Book.class, id);
+		tx.commit();
+		session.flush();
+		session.close();
+		return book;
 	}
 
 	public List<Book> getAllBooks() {
