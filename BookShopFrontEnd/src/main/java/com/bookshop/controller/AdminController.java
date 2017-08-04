@@ -52,7 +52,7 @@ public class AdminController {
 	public ModelAndView manageProducts() {
 
 		ModelAndView mv = new ModelAndView("adminHome");
-		mv.addObject("isUserClickedProducts", "true");
+		mv.addObject("isUserClickedBooks", "true");
 		List<Book> productList = bookDAO.getAllBooks();
 		mv.addObject("productList", productList);
 		mv.addObject("book", book);

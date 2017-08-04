@@ -21,7 +21,7 @@
 		<jsp:include page="category.jsp" />
 	</c:if>
 
-	<c:if test="${isUserClickedProducts==true}">
+	<c:if test="${isUserClickedBooks==true}">
 		<jsp:include page="book.jsp" />
 	</c:if>
 	<c:if test="${isUserClickedSuppliers==true}">
