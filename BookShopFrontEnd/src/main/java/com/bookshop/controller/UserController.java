@@ -18,12 +18,11 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 
-	
 	// registration get method
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView getRegistrationForm() {
 		ModelAndView mv = new ModelAndView("/register");
-		User user=new User();
+		User user = new User();
 		mv.addObject("user", user);
 		return mv;
 
@@ -52,29 +51,42 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView getLoginPage() {
 		ModelAndView mv = new ModelAndView("/login");
-		User user=new User();
+		User user = new User();
 		mv.addObject("user", user);
 		return mv;
 
 	}
 
 	// Login post method
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView postForm(@ModelAttribute("user") User user) {
-		ModelAndView mv = null;
-		boolean flag = userDAO.login(user.getUsername(), user.getPassword());
+	/*
+	 * @RequestMapping(value = "/login", method = RequestMethod.POST) public
+	 * ModelAndView postForm(@ModelAttribute("user") User user) { ModelAndView
+	 * mv = null; boolean flag = userDAO.login(user.getUsername(),
+	 * user.getPassword());
+	 * 
+	 * if (flag) { mv = new ModelAndView("adminHome"); mv.addObject("sucessMsg",
+	 * "welcome to admin Home Page"); }
+	 * 
+	 * else { mv = new ModelAndView("login"); mv.addObject("errorMsg",
+	 * "Please provide correct credentials!"); } return mv;
+	 * 
+	 * }
+	 */
 
-		if (flag) {
-			mv = new ModelAndView("adminHome");
-			mv.addObject("sucessMsg", "welcome to admin Home Page");
-		}
+	@RequestMapping("/login")
+	public String login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, Model model) {
+		if (error != null)
+			model.addAttribute("error", "Invalid username and password. Try again.");
+		if (logout != null)
+			model.addAttribute("logout", "Logout successful.");
 
-		else {
-			mv = new ModelAndView("login");
-			mv.addObject("errorMsg", "Plz provide correct credentials!");
-		}
-		return mv;
+		return "login";
+	}
 
+	@RequestMapping("/adminHome")
+	public String adminHome() {
+		return "adminHome";
 	}
 
 }

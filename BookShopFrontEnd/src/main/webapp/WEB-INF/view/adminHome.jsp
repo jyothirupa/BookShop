@@ -7,12 +7,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home page</title>
+<%@include file="header.jsp"%>
 </head>
 <body>
-	<p>This is the Admin home page</p>
 
-	<a href="manage_categories">Category</a><br/><br/>
-	<a href="manage_products">Book</a><br/><br/>
+
+
+	<a href="manage_categories">Category</a>
+	<br />
+	<br />
+	<a href="manage_products">Book</a>
+	<br />
+	<br />
 	<a href="manage_suppliers">Supplier</a>
 
 
@@ -29,7 +35,7 @@
 	</c:if>
 
 
-
+	<%@include file="footer.jsp"%>
 
 
 </body>

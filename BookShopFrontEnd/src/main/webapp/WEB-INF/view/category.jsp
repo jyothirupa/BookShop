@@ -12,40 +12,47 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet"
 	href="http://cdn.dcodes.net/2/tables1/css/dc_tables1.css" />
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 </head>
 <body>
 
-	<center><h2>Manage Category</h2></center>
+	<center>
+		<h2>Manage Category</h2>
+	</center>
 
-		<a href="manage_category_create" class="btn btn-primary" role="button">Add Category</a>
 
-		<table class="dc_table_s3" summary="Sample Table" style="width: 80%;">
+	<security:authorize access="hasRole('ROLE_ADMIN')">
+		<a href="manage_category_create" class="btn btn-primary" role="button">Add
+			Category</a>
+	</security:authorize>
+	<table class="dc_table_s3" summary="Sample Table" style="width: 80%;">
 
-			<thead>
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">Name</th>
-					<th scope="col">Description</th>
-					<th scope="col">Action</th>
-				</tr>
-			</thead>
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Description</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
 
-			<c:forEach var="category" items="${categoryList}">
-				<tr>
-					<td align="center">${category.id}</td>
-					<td align="center">${category.name}</td>
-					<td align="center">${category.description}</td>
+		<c:forEach var="category" items="${categoryList}">
+			<tr>
+				<td align="center">${category.id}</td>
+				<td align="center">${category.name}</td>
+				<td align="center">${category.description}</td>
 
-					<td align="center"><a
-						href="<c:url value="manage_category_edit/${category.id}"/>">Edit
-							<span class="glyphicon glyphicon-edit"></span>
-					</a>| <a href="<c:url value="manage_category_delete/${category.id}"/>">
-							<span class="glyphicon glyphicon-trash"></span>delete
-					</a></td>
+				<td align="center"><a
+					href="<c:url value="manage_category_edit/${category.id}"/>">Edit
+						<span class="glyphicon glyphicon-edit"></span>
+				</a>| <a href="<c:url value="manage_category_delete/${category.id}"/>">
+						<span class="glyphicon glyphicon-trash"></span>delete
+				</a></td>
 
-				</tr>
-			</c:forEach>
+			</tr>
+		</c:forEach>
 
-		</table>
+	</table>
 </body>
 </html>

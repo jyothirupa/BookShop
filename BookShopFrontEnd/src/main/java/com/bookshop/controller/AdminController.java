@@ -35,7 +35,7 @@ public class AdminController {
 	@Autowired
 	Book book;
 
-	@RequestMapping("/manage_categories")
+	@RequestMapping("/manage_category")
 	public ModelAndView manageCategories() {
 
 		ModelAndView mv = new ModelAndView("adminHome");
@@ -48,7 +48,7 @@ public class AdminController {
 
 	}
 
-	@RequestMapping("/manage_products")
+	@RequestMapping("/manage_product")
 	public ModelAndView manageProducts() {
 
 		ModelAndView mv = new ModelAndView("adminHome");
@@ -60,7 +60,7 @@ public class AdminController {
 		return mv;
 	}
 
-	@RequestMapping("/manage_suppliers")
+	@RequestMapping("/manage_supplier")
 	public ModelAndView manageSuppliers() {
 
 		ModelAndView mv = new ModelAndView("adminHome");

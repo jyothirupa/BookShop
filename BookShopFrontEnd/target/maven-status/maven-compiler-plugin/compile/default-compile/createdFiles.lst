@@ -1,2 +1,6 @@
+com\bookshop\controller\AdminController.class
+com\bookshop\controller\CategoryController.class
 com\bookshop\controller\HomeController.class
+com\bookshop\controller\SupplierController.class
+com\bookshop\controller\BookController.class
 com\bookshop\controller\UserController.class

@@ -1,7 +1,10 @@
 <html>
 <body>
-	<a href="login">Sign In</a><br/><br/>
-	
-	<a href="register">Sign Up</a>
+
+	<%@include file="header.jsp"%>
+
+	<%@include file="footer.jsp"%>
+
+
 </body>
 </html>
