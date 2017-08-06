@@ -19,6 +19,8 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			Session session = sessionFactory.openSession();
 			Transaction tx = session.beginTransaction();
+			user.setRole("ROLE_USER");
+			user.setEnabled(true);
 			session.saveOrUpdate(user);// db Operation
 			tx.commit();
 			session.flush();
